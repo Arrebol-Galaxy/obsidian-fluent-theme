@@ -18,7 +18,7 @@ A clean and restrained Obsidian theme, **inspired by the official Fluent theme o
 - **Card-style blockquotes** — no left accent bar, just a soft gray card, exactly like Typora's Fluent; the gray padding above and below the text is adjustable (0–24px)
 - **Card-style tables** — 8px rounded corners, hairline borders, zebra stripes, tabular numerals (`tnum`)
 - **Rendered preview cards** — Mermaid diagrams and LaTeX math blocks render inside the same gray Fluent card with rounded corners
-- **Fluent checkboxes** — 24px square task-list checkboxes rebuilt with the original SVG assets from the Typora theme
+- **Fluent checkboxes** — 24px square task-list checkboxes with a dedicated white checkmark layer for consistent contrast in light and dark mode
 - **Six callout accent colors** — bookmark (indigo), star (blue), tip (yellow), note (teal), warning (red), question (pink); also supports Typora's "blockquote + heading" syntax
 - **macOS-style radius** — blockquotes, tables, code blocks and callouts share a unified 8px corner radius
 - **Typography** — Inter for headings and body text, JetBrains Mono for code; loaded from CDN with automatic system-font fallback (PingFang SC / Source Han Sans for CJK)
@@ -78,7 +78,7 @@ Other useful variables: `--text-link` (link color), `--elevated-background` (car
 - **纯灰底引用块**：没有左侧竖线的卡片式引用块，与 Typora Fluent 一致；文字上、下方的灰色厚度可在 0–24px 间调节
 - **卡片式表格**：8px 圆角外框、细边框、斑马纹、等宽数字（`tnum`）
 - **预览卡片统一风格**：Mermaid 图表与 LaTeX 公式块同样渲染为灰底 Fluent 卡片，带圆角
-- **Fluent 复选框**：24px 方形任务列表复选框，从 Typora 主题中提取原始 SVG 图标复刻
+- **Fluent 复选框**：24px 方形任务列表复选框，使用独立白色勾号图层，在浅色与深色模式下均保持清晰对比
 - **六种 Callout 语义色**：收藏（蓝紫）、星标（蓝）、灵感（黄）、笔记（青绿）、警告（红）、疑问（粉），同时兼容 Typora 的「引用块 + 首行标题」写法
 - **macOS 风格圆角**：引用块、表格、代码块、Callout 统一 8px
 - **字体**：标题/正文 Inter，代码 JetBrains Mono，在线加载、离线自动回退系统字体（中文回退苹方 / 思源黑体）
