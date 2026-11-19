@@ -47,6 +47,70 @@ settings:
         max: 24
         step: 1
         format: px
+    -
+        id: fluent-inline-link-color
+        title: Inline link color
+        title.zh: 正文链接颜色
+        type: variable-select
+        default: 'var(--text-normal)'
+        options:
+            -
+                label: Match note text
+                value: 'var(--text-normal)'
+            -
+                label: Muted
+                value: 'var(--text-muted)'
+            -
+                label: Theme accent
+                value: 'var(--text-link)'
+    -
+        id: fluent-link-line-style
+        title: Link underline style
+        title.zh: 链接下划线线型
+        type: variable-select
+        default: dashed
+        options:
+            - dashed
+            - dotted
+            - solid
+            - double
+            - wavy
+    -
+        id: fluent-link-line-color
+        title: Link underline color
+        title.zh: 链接下划线颜色
+        type: variable-select
+        default: 'var(--text-muted)'
+        options:
+            -
+                label: Muted
+                value: 'var(--text-muted)'
+            -
+                label: Match link text
+                value: currentColor
+            -
+                label: Theme accent
+                value: 'var(--text-link)'
+    -
+        id: fluent-link-line-width
+        title: Link underline thickness
+        title.zh: 链接下划线粗细
+        type: variable-number-slider
+        default: 1
+        min: 0.5
+        max: 4
+        step: 0.5
+        format: px
+    -
+        id: fluent-link-line-offset
+        title: Link underline offset
+        title.zh: 链接下划线与文字的距离
+        type: variable-number-slider
+        default: 0.18
+        min: 0
+        max: 0.4
+        step: 0.01
+        format: em
 */
 
 /* ==========================================================================
@@ -521,25 +585,25 @@ body,
    6. 链接
    -------------------------------------------------------------------------- */
 
-.markdown-rendered a,
-.cm-link .cm-underline,
-.cm-hmd-internal-link .cm-underline,
-.cm-url {
-    color: var(--link-color);
-    text-decoration: none;
+.markdown-source-view.mod-cm6 :is(.cm-hmd-internal-link, .cm-link) {
+    color: var(--fluent-inline-link-color, var(--text-normal));
 }
 
-.markdown-rendered a:hover,
-.cm-hmd-internal-link:hover {
-    text-decoration: underline;
+.markdown-rendered a:is(.internal-link, .external-link),
+.markdown-source-view.mod-cm6 .cm-url:not(:has(.cm-underline)),
+.markdown-source-view.mod-cm6 :is(.cm-hmd-internal-link, .cm-link, .cm-url) .cm-underline {
+    color: var(--fluent-inline-link-color, var(--text-normal));
+    text-decoration-line: underline;
+    text-decoration-style: var(--fluent-link-line-style, dashed);
+    text-decoration-color: var(--fluent-link-line-color, var(--text-muted));
+    text-decoration-thickness: var(--fluent-link-line-width, 1px);
+    text-underline-offset: var(--fluent-link-line-offset, 0.18em);
 }
 
-.cm-url {
-    color: var(--color-cm-link);
-}
-
-.theme-dark .cm-url {
-    color: var(--color-cm-link);
+.markdown-rendered a:is(.internal-link, .external-link):hover,
+.markdown-source-view.mod-cm6 .cm-url:hover,
+.markdown-source-view.mod-cm6 :is(.cm-hmd-internal-link, .cm-link, .cm-url):hover .cm-underline {
+    text-decoration-style: var(--fluent-link-line-style, dashed);
 }
 
 /* 未解析链接 */

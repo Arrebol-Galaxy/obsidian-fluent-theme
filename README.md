@@ -22,7 +22,7 @@ A clean and restrained Obsidian theme, **inspired by the official Fluent theme o
 - **Six callout accent colors** — bookmark (indigo), star (blue), tip (yellow), note (teal), warning (red), question (pink); also supports Typora's "blockquote + heading" syntax
 - **macOS-style radius** — blockquotes, tables, code blocks and callouts share a unified 8px corner radius
 - **Typography** — Inter for headings and body text, JetBrains Mono for code; loaded from CDN with automatic system-font fallback (PingFang SC / Source Han Sans for CJK)
-- **Style Settings support** — optional [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) integration: tooltip bubble toggle, card-radius and blockquote-radius sliders, and blockquote top/bottom padding
+- **Style Settings support** — optional [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) integration: tooltip appearance, card and blockquote radius, blockquote padding, inline-link color, and link underline style, color, thickness and offset
 
 ### Installation
 
@@ -38,6 +38,10 @@ A clean and restrained Obsidian theme, **inspired by the official Fluent theme o
 - **Card corner radius** — 0 to 16px slider for tables, code blocks, callouts and rendered preview boxes (Mermaid, LaTeX)
 - **Blockquote corner radius** — independent 0 to 16px slider for blockquotes
 - **Blockquote top/bottom padding** — 0 to 24px slider for the gray padding above and below quote text (left and right stay fixed); set it to 16px for equal padding on all four sides
+- **Inline link color** — choose note text, muted text, or the theme accent
+- **Link underline style** — choose dashed, dotted, solid, double, or wavy
+- **Link underline color** — choose muted, match the link text, or use the theme accent
+- **Link underline thickness and offset** — adjust line weight from 0.5 to 4px and its distance from the text from 0 to 0.4em
 
 **Without any plugin**, override the CSS variables directly in Settings → Appearance → CSS snippets:
 
@@ -57,6 +61,11 @@ body {
 body {
     --fluent-quote-radius: 8px;
     --fluent-quote-vborder: 12px;
+    --fluent-inline-link-color: var(--text-normal);
+    --fluent-link-line-style: dashed;
+    --fluent-link-line-color: var(--text-muted);
+    --fluent-link-line-width: 1px;
+    --fluent-link-line-offset: 0.18em;
 }
 ```
 
@@ -82,7 +91,7 @@ Other useful variables: `--text-link` (link color), `--elevated-background` (car
 - **六种 Callout 语义色**：收藏（蓝紫）、星标（蓝）、灵感（黄）、笔记（青绿）、警告（红）、疑问（粉），同时兼容 Typora 的「引用块 + 首行标题」写法
 - **macOS 风格圆角**：引用块、表格、代码块、Callout 统一 8px
 - **字体**：标题/正文 Inter，代码 JetBrains Mono，在线加载、离线自动回退系统字体（中文回退苹方 / 思源黑体）
-- **支持 Style Settings 插件**：可切换提示气泡深浅样式、拖动调整卡片圆角、引用块圆角与上下灰边厚度
+- **支持 Style Settings 插件**：可调提示气泡、卡片与引用块圆角、引用块上下灰边，以及正文链接颜色和下划线线型、颜色、粗细、间距
 
 ### 安装
 
@@ -98,6 +107,10 @@ Other useful variables: `--text-link` (link color), `--elevated-background` (car
 - **卡片圆角**——0 到 16px 滑块，控制表格、代码块、Callout、Mermaid / LaTeX 预览框的圆角
 - **引用块圆角**——引用块独立的 0 到 16px 圆角滑块
 - **引用块上下灰边厚度**——0 到 24px 滑块，控制灰底在文字上方、下方的厚度（左右固定不动）；拉到 16px 即四边等宽
+- **正文链接颜色**——可选正文色、弱化文字色或主题强调色
+- **链接下划线线型**——可选虚线、点线、实线、双线或波浪线
+- **链接下划线颜色**——可选弱化文字色、跟随链接文字或主题强调色
+- **下划线粗细与间距**——粗细 0.5 到 4px，文字间距 0 到 0.4em
 
 **不装插件**也可以直接在 设置 → 外观 → CSS 代码片段 里覆盖变量：
 
@@ -117,6 +130,11 @@ body {
 body {
     --fluent-quote-radius: 8px;
     --fluent-quote-vborder: 12px;
+    --fluent-inline-link-color: var(--text-normal);
+    --fluent-link-line-style: dashed;
+    --fluent-link-line-color: var(--text-muted);
+    --fluent-link-line-width: 1px;
+    --fluent-link-line-offset: 0.18em;
 }
 ```
 
